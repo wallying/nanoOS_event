@@ -19,7 +19,7 @@ void os_clock_init(void)
 
 os_tick os_tick_get(void)
 {
-    return 0;
+    return 0;//reg_system_tick;
 }
 
 

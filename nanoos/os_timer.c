@@ -57,7 +57,7 @@ void os_timer_update(os_time time)
 /*----------------------------------------------------------------------------*/
 static void os_timer_remove(os_timer *tmr)
 {
-    /*remove tmr from the os_timer_list*/
+    /* remove tmr from the os_timer_list */
     if (tmr == os_timer_list) {
         os_timer_list = tmr->next;
         tmr->next = NULL;
@@ -78,7 +78,7 @@ static void os_timer_insert(os_timer *tmr)
 {
     os_timer_remove(tmr);
 
-    /*insert tmr into the os_timer_list*/
+    /* insert tmr into the os_timer_list */
     if (os_timer_list == NULL) {
         tmr->next = os_timer_list;
         os_timer_list = tmr;
@@ -88,11 +88,11 @@ static void os_timer_insert(os_timer *tmr)
         for (; srch != NULL; srch = srch->next) {
             if (srch->tmo >= tmr->tmo) {
                 if (prev == NULL) {
-                    /*tmr's timeout is min, add to os_timer_list head*/
+                    /* tmr's timeout is min, add to os_timer_list head */
                     tmr->next = os_timer_list;
                     os_timer_list = tmr;
                 } else {
-                    /*add tmr to os_timer_list*/
+                    /* add tmr to os_timer_list */
                     tmr->next = prev->next;
                     prev->next = tmr;
                 }
@@ -100,7 +100,7 @@ static void os_timer_insert(os_timer *tmr)
             }
             prev = srch;
         }
-        /*tmr's timeout is max, add to os_timer_list tail*/
+        /* tmr's timeout is max, add to os_timer_list tail */
         if (srch == NULL) {
             tmr->next = prev->next;
             prev->next = tmr;

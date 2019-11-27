@@ -21,7 +21,7 @@
     1. OS_EVT_POLL
     2. OS_EVT_INIT
     3. OS_EVT_EXIT
-    4. USER_EVT
+    4. USER_EVT_TYPE
 ### event release
     1. os_event_emit() --> synchronous event
     2. os_event_post() --> asynchronous event

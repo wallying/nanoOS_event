@@ -15,7 +15,7 @@
 #define OS_VERSION          (os_u16)(0x0101) /* V01.01 */
 
 
-/*os state for task*/
+/* os state for task */
 #define OS_STATE_DORMANT    (os_u8)(0x00)
 #define OS_STATE_RUNNING    (os_u8)(0x80)
 
@@ -35,7 +35,7 @@ typedef struct {
     os_event evt;
     void *data;
     os_tcb *tcb;
-} os_evtq; /*os event queue type*/
+} os_evtq; /* os event queue type */
 static os_evtq os_event_queue[OS_CFG_EVENT_NUM_MAX];
 
 

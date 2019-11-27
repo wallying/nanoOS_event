@@ -38,8 +38,8 @@ typedef unsigned long long os_u64;
 
 typedef os_u32 os_tick; /* determined by MCU hardware timer bit */
 
-#define OS_INT_DISABLE()        //__disable_interrupt()
-#define OS_INT_ENABLE()         //__enable_interrupt()
+#define OS_INT_DISABLE()        //irq_disable()
+#define OS_INT_ENABLE()         //irq_enable()
 
 /* Implementation of the function should be completed by the user */
 void os_clock_init(void);
