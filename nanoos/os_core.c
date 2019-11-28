@@ -9,7 +9,6 @@
 
 
 #include "os_api.h"
-#include "bsp.h"
 
 
 #define OS_VERSION          (os_u16)(0x0101) /* V01.01 */
@@ -18,18 +17,20 @@
 /* os state for task */
 #define OS_STATE_DORMANT    (os_u8)(0x00)
 #define OS_STATE_RUNNING    (os_u8)(0x80)
-
+#define OS_STATE_POLLING    (os_u8)(0x40)
 
 static os_cb os_loop_cb = NULL;
 static os_cb os_idle_cb = NULL;
 
 static os_tcb *os_task_list = NULL;
 
-static volatile os_u8 os_event_poll = 0; /* just 0 or 1 */
+static os_u8 os_event_poll = 0; /* just 0 or 1 */
 
 typedef os_u16 os_evtn; /* os event number type */
 static os_evtn os_event_idx = 0; /* read index of os_event_queue */
 static os_evtn os_event_num = 0; /* number of event */
+
+os_evtn os_event_cnt = 0;
 
 typedef struct {
     os_event evt;
@@ -131,16 +132,14 @@ void os_task_poll(os_tcb *tcb, os_flag flag)
 /*----------------------------------------------------------------------------*/
 static void os_task_call(os_tcb *tcb, os_event evt, void *data)
 {
-    if (tcb != NULL) {
-        if (tcb->state == OS_STATE_RUNNING) {
-            if (evt == OS_EVT_EXIT) {
-                os_task_exit(tcb, data);
-            } else {
-                if (tcb->task != NULL) {
-                    tcb->task(evt, data);
-                }
-            }
-        }
+    if ((tcb != NULL) && (tcb->state == OS_STATE_RUNNING)) {
+		if (evt == OS_EVT_EXIT) {
+			os_task_exit(tcb, data);
+		} else {
+			if (tcb->task != NULL) {
+				tcb->task(evt, data);
+			}
+		}
     }
 }
 
@@ -172,6 +171,7 @@ static void os_task_polling(void)
 /*---------------------------------------------------------------------------*/
 void os_event_clear(void)
 {
+    os_event_poll = 0;
     os_event_idx = 0;
     os_event_num = 0;
 }
@@ -199,6 +199,8 @@ os_err os_event_post(os_tcb *tcb, os_event evt, void *data)
     os_event_queue[widx].data = data;
     os_event_queue[widx].tcb = tcb;
     ++os_event_num;
+
+    os_event_cnt = os_event_num > os_event_cnt ? os_event_num : os_event_cnt;
 
     return OS_ERR_NONE;
 }
@@ -229,11 +231,11 @@ static void os_event_handle(void)
 /*---------------------------------------------------------------------------*/
 void os_timer_update(os_time time);
 
-static volatile os_time os_sys_time = 0;
+static os_time os_time_cnt = 0;
 
 void os_clock_isr(void)
 {
-    os_sys_time++;
+    ++os_time_cnt;
 
     os_timer_update(1);
 }
@@ -254,7 +256,7 @@ void os_clock_update(void)
         previous_tick = current_tick;
 
         if (elapsed_time) {
-            os_sys_time += elapsed_time;
+            os_time_cnt += elapsed_time;
 
             os_timer_update(elapsed_time);
         }
@@ -264,7 +266,7 @@ void os_clock_update(void)
 
 os_time os_time_get(void)
 {
-    return os_sys_time;
+    return os_time_cnt;
 }
 
 
@@ -278,8 +280,11 @@ void os_init(os_cb loop, os_cb idle)
 
     os_task_list = NULL;
 
+    os_event_poll = 0;
     os_event_idx = 0;
     os_event_num = 0;
+
+    os_event_cnt = 0;
 
     void os_timer_init(void);
     os_timer_init();
