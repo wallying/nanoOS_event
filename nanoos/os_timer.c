@@ -19,7 +19,7 @@ void os_timer_task_entry(os_event evt, void *data)
     if (evt == OS_EVT_POLL) {
         os_timer *srch = os_timer_list;
         for (; (srch != NULL) && (srch->tmo == 0); srch = srch->next) {
-            os_timer_list = srch->next; /*first remove, then callback*/
+            os_timer_list = srch->next; /* first remove, then callback */
             srch->next = NULL;
             if (srch->func != NULL) {
                 srch->func(srch->param);
@@ -145,4 +145,8 @@ void os_timer_stop(os_timer *tmr)
     }
 }
 
+os_time os_timer_timeout(void)
+{
+	return (os_timer_list != NULL) ? os_timer_list->tmo : 0;
+}
 
