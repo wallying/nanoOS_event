@@ -24,7 +24,7 @@ static os_cb os_idle_cb = NULL;
 
 static os_tcb *os_task_list = NULL;
 
-static os_u8 os_event_poll = 0; /* just 0 or 1 */
+static volatile os_u8 os_event_poll = 0; /* just 0 or 1 */
 
 typedef os_u16 os_evtn; /* os event number type */
 static os_evtn os_event_idx = 0; /* read index of os_event_queue */
@@ -231,7 +231,7 @@ static void os_event_handle(void)
 /*---------------------------------------------------------------------------*/
 void os_timer_update(os_time time);
 
-static os_time os_time_cnt = 0;
+static volatile os_time os_time_cnt = 0;
 
 void os_clock_isr(void)
 {

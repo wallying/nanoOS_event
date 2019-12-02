@@ -16,7 +16,7 @@
 /*============================================================================*/
 /* os_clock_init() : os time clock frequency: 16MHz */
 #define OS_TIME_CLOCK_HZ            (16000000)
-#define OS_CFG_TIME_UINT            (OS_TIME_CLOCK_HZ/1000)
+#define OS_CFG_TIME_UINT            (OS_TIME_CLOCK_HZ/1000) /* 1ms */
 
 
 #endif /* __OS_CFG_H__ */
