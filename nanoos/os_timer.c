@@ -145,6 +145,13 @@ void os_timer_stop(os_timer *tmr)
     }
 }
 
+
+os_u8 os_timer_pending(void)
+{
+	return (os_timer_list != NULL) ? 0x01 : 0x00;
+}
+
+
 os_time os_timer_timeout(void)
 {
 	return (os_timer_list != NULL) ? os_timer_list->tmo : 0;

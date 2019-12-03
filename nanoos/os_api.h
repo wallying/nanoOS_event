@@ -107,6 +107,7 @@ os_err os_event_post(os_tcb *tcb, os_event evt, void *data);
 void os_timer_start(os_timer *tmr, os_time tmo, void (*func)(void *), void *param);
 void os_timer_restart(os_timer *tmr, os_time tmo);
 void os_timer_stop(os_timer *tmr);
+os_u8 os_timer_pending(void);
 os_time os_timer_timeout(void);
 
 
