@@ -1,7 +1,6 @@
 # nanoOS_event
 
 nanoOS_event is a task scheduling framework based on event driven, and includes timer related funcation.
-https://github.com/wallying/nanoOS_event.git
 
 ## file directory
 * app
