@@ -19,7 +19,7 @@ int main(void)
 
     os_init(main_loop_callback, NULL);
 
-    /* task init */
+    /* user task init */
     os_task_init(&task_main, task_mainEntry, NULL);
     //os_task_init(&task_key, task_keyEntry, NULL);
     //os_task_init(&task_led, task_ledEntry, NULL);
