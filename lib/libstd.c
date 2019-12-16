@@ -1,3 +1,8 @@
+/**
+ * file:    libstd.c
+ * author:  wallying@foxmail.com
+ * date:    2019-12-16
+ **/
 
 
 #include "libstd.h"
@@ -135,6 +140,29 @@ unsigned int lib_strnlen(const char *str, unsigned int cnt)
     const char *ptr = str;
     for (; cnt-- && *ptr != '\0'; ++ptr);
     return ptr - str;
+}
+
+
+char *lib_strchr(const char *str, int c)
+{
+	for (; *str != (char)c; ++str) {
+		if (*str == '\0') {
+			return NULL;
+		}
+	}
+	return (char *)str;
+}
+
+
+char *lib_strnchr(const char *str, unsigned int cnt, int c)
+{
+	while (cnt--) {
+		if (*str == (char)c)
+			return (char *)str;
+		if (*str++ == '\0')
+			break;
+	}
+	return NULL;
 }
 
 

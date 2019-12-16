@@ -1,5 +1,17 @@
+/**
+ * file:    libstd.h
+ * author:  wallying@foxmail.com
+ * date:    2019-12-16
+ **/
+
+
 #ifndef __LIBSTD_H__
 #define __LIBSTD_H__
+
+
+#ifndef NULL
+#define NULL ((void *)0)
+#endif
 
 
 typedef char* va_list;
@@ -32,6 +44,9 @@ int lib_strncmp(const char *str1, const char *str2, unsigned int cnt);
 
 unsigned int lib_strlen(const char *str);
 unsigned int lib_strnlen(const char *str, unsigned int cnt);
+
+char *lib_strchr(const char *str, int c);
+char *lib_strnchr(const char *str, unsigned int cnt, int c);
 
 
 int lib_vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args);
