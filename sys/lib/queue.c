@@ -236,7 +236,7 @@ unsigned int queue_read(queue_t *queue, void *buf, unsigned int len)
     for (cnt = 0; cnt < len; cnt++) {
         /* circle queue is empty */
         if ((queue->ridx == queue->widx) && (queue->full == 0)) {
-            //if (queue->ridx == queue->widx) {
+        //if (queue->ridx == queue->widx) {
             break;
         } else {
             memcpy(buf + cnt * queue->size,

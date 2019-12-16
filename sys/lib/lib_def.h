@@ -9,6 +9,9 @@
 #define __LIB_DEF_H__
 
 
+#include "os_type"
+
+
 #ifndef BIT
 #define BIT(n)          (0x01 << (n))
 #endif
@@ -31,49 +34,49 @@
 
 
 #ifndef LO_UINT8
-#define LO_UINT8(x)         ((uint8)(((x) >> 0) & 0x0F))
+#define LO_UINT8(x)         ((os_u8)(((x) >> 0) & 0x0F))
 #endif
 #ifndef HI_UINT8
-#define HI_UINT8(x)         ((uint8)(((x) >> 4) & 0x0F))
+#define HI_UINT8(x)         ((os_u8)(((x) >> 4) & 0x0F))
 #endif
-#ifndef BUILD_UINT8
-#define BUILD_UINT8(loByte, hiByte) \
-                    ((uint8)((((uint8)(loByte) & 0x0F) << 0) + \
-                             (((uint8)(hiByte) & 0x0F) << 4)))
+#ifndef MAKE_U8
+#define MAKE_U8(loByte, hiByte) \
+                    ((os_u8)((((os_u8)(loByte) & 0x0F) << 0) + \
+                             (((os_u8)(hiByte) & 0x0F) << 4)))
 #endif
 
 
 #ifndef LO_UINT16
-#define LO_UINT16(x)        ((uint8)(((x) >> 0) & 0xFF))
+#define LO_UINT16(x)        ((os_u8)(((x) >> 0) & 0xFF))
 #endif
 #ifndef HI_UINT16
-#define HI_UINT16(x)        ((uint8)(((x) >> 8) & 0xFF))
+#define HI_UINT16(x)        ((os_u8)(((x) >> 8) & 0xFF))
 #endif
-#ifndef BUILD_UINT16
-#define BUILD_UINT16(byte0, byte1) \
+#ifndef MAKE_U16
+#define MAKE_U16(byte0, byte1) \
                     ((uint16)((((uint16)(byte0) & 0xFF) << 0) + \
                               (((uint16)(byte1) & 0xFF) << 8)))
 #endif
 
 
 #ifndef BYTE0_UINT32
-#define BYTE0_UINT32(x)     ((uint8)(((x) >>  0) & 0xFF))
+#define BYTE0_UINT32(x)     ((os_u8)(((x) >>  0) & 0xFF))
 #endif
 #ifndef BYTE1_UINT32
-#define BYTE1_UINT32(x)     ((uint8)(((x) >>  8) & 0xFF))
+#define BYTE1_UINT32(x)     ((os_u8)(((x) >>  8) & 0xFF))
 #endif
 #ifndef BYTE2_UINT32
-#define BYTE2_UINT32(x)     ((uint8)(((x) >> 16) & 0xFF))
+#define BYTE2_UINT32(x)     ((os_u8)(((x) >> 16) & 0xFF))
 #endif
 #ifndef BYTE3_UINT32
-#define BYTE3_UINT32(x)     ((uint8)(((x) >> 24) & 0xFF))
+#define BYTE3_UINT32(x)     ((os_u8)(((x) >> 24) & 0xFF))
 #endif
-#ifndef BUILD_UINT32
-#define BUILD_UINT32(byte0, byte1, byte2, byte3) \
-                    ((uint32)((((uint32)(byte0) & 0xFF) <<  0) + \
-                              (((uint32)(byte1) & 0xFF) <<  8) + \
-                              (((uint32)(byte2) & 0xFF) << 16) + \
-                              (((uint32)(byte3) & 0xFF) << 24)))
+#ifndef MAKE_U32
+#define MAKE_U32(byte0, byte1, byte2, byte3) \
+                    ((os_u32)((((os_u32)(byte0) & 0xFF) <<  0) + \
+                              (((os_u32)(byte1) & 0xFF) <<  8) + \
+                              (((os_u32)(byte2) & 0xFF) << 16) + \
+                              (((os_u32)(byte3) & 0xFF) << 24)))
 #endif
 
 
