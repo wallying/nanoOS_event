@@ -8,7 +8,7 @@
 #include "string.h"
 
 
-void *lib_memset(void *buf, int val, unsigned int cnt)
+void *memset(void *buf, int val, unsigned int cnt)
 {
     void *ptr = buf;
     while (cnt--) {
@@ -18,7 +18,7 @@ void *lib_memset(void *buf, int val, unsigned int cnt)
 }
 
 
-void *lib_memcpy(void *dst, const void *src, unsigned int cnt)
+void *memcpy(void *dst, const void *src, unsigned int cnt)
 {
     void *ptr = dst;
     while (cnt--) {
@@ -28,7 +28,7 @@ void *lib_memcpy(void *dst, const void *src, unsigned int cnt)
 }
 
 
-void *lib_memmove(void *dst, const void *src, unsigned int cnt)
+void *memmove(void *dst, const void *src, unsigned int cnt)
 {
     char *dp = dst;
     const char *sp = src;
@@ -47,7 +47,7 @@ void *lib_memmove(void *dst, const void *src, unsigned int cnt)
 }
 
 
-int lib_memcmp(const void *buf1, const void *buf2, unsigned int cnt)
+int memcmp(const void *buf1, const void *buf2, unsigned int cnt)
 {
     int ret = 0;
     while (cnt--) {
@@ -60,7 +60,7 @@ int lib_memcmp(const void *buf1, const void *buf2, unsigned int cnt)
 
 
 /*----------------------------------------------------------------------------*/
-char *lib_strcpy(char *dst, const char *src)
+char *strcpy(char *dst, const char *src)
 {
     char *ptr = dst;
     while ((*dst++ = *src++) != '\0');
@@ -68,7 +68,7 @@ char *lib_strcpy(char *dst, const char *src)
 }
 
 
-char *lib_strncpy(char *dst, const char *src, unsigned int cnt)
+char *strncpy(char *dst, const char *src, unsigned int cnt)
 {
     char *ptr = dst;
     while (cnt--) {
@@ -80,7 +80,7 @@ char *lib_strncpy(char *dst, const char *src, unsigned int cnt)
 }
 
 
-char *lib_strcat(char *dst, const char *src)
+char *strcat(char *dst, const char *src)
 {
     char *ptr = dst;
     while (*dst++);
@@ -89,7 +89,7 @@ char *lib_strcat(char *dst, const char *src)
 }
 
 
-char *lib_strncat(char *dst, const char *src, unsigned int cnt)
+char *strncat(char *dst, const char *src, unsigned int cnt)
 {
     char *ptr = dst;
     if (cnt) {
@@ -103,7 +103,7 @@ char *lib_strncat(char *dst, const char *src, unsigned int cnt)
 }
 
 
-int lib_strcmp(const char *str1, const char *str2)
+int strcmp(const char *str1, const char *str2)
 {
     int ret = 0;
     while (1) {
@@ -115,7 +115,7 @@ int lib_strcmp(const char *str1, const char *str2)
 }
 
 
-int lib_strncmp(const char *str1, const char *str2, unsigned int cnt)
+int strncmp(const char *str1, const char *str2, unsigned int cnt)
 {
     int ret = 0;
     while (cnt--) {
@@ -127,7 +127,7 @@ int lib_strncmp(const char *str1, const char *str2, unsigned int cnt)
 }
 
 
-unsigned int lib_strlen(const char *str)
+unsigned int strlen(const char *str)
 {
     const char *ptr = str;
     for (; *ptr != '\0'; ++ptr);
@@ -135,7 +135,7 @@ unsigned int lib_strlen(const char *str)
 }
 
 
-unsigned int lib_strnlen(const char *str, unsigned int cnt)
+unsigned int strnlen(const char *str, unsigned int cnt)
 {
     const char *ptr = str;
     for (; cnt-- && *ptr != '\0'; ++ptr);
@@ -143,7 +143,7 @@ unsigned int lib_strnlen(const char *str, unsigned int cnt)
 }
 
 
-char *lib_strchr(const char *str, int c)
+char *strchr(const char *str, int c)
 {
 	for (; *str != (char)c; ++str) {
 		if (*str == '\0') {
@@ -154,7 +154,7 @@ char *lib_strchr(const char *str, int c)
 }
 
 
-char *lib_strnchr(const char *str, unsigned int cnt, int c)
+char *strnchr(const char *str, unsigned int cnt, int c)
 {
 	while (cnt--) {
 		if (*str == (char)c)
@@ -167,27 +167,27 @@ char *lib_strnchr(const char *str, unsigned int cnt, int c)
 
 
 /*----------------------------------------------------------------------------*/
-int lib_vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args)
+int vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args)
 {
     return 0;
 }
 
 
-int lib_sprintf(char *buf, const char *fmt, ...)
+int sprintf(char *buf, const char *fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
-    int len = lib_vsnprintf(buf, ((unsigned int)(~0)), fmt, args);
+    int len = vsnprintf(buf, ((unsigned int)(~0)), fmt, args);
     va_end(args);
     return len;
 }
 
 
-int lib_snprintf(char *buf, unsigned int cnt, const char *fmt, ...)
+int snprintf(char *buf, unsigned int cnt, const char *fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
-    int len = lib_vsnprintf(buf, cnt, fmt, args);
+    int len = vsnprintf(buf, cnt, fmt, args);
     va_end(args);
     return len;
 }

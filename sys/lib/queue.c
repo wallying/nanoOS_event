@@ -5,14 +5,14 @@
  **/
 
 
-#include "queue.h"
+#include "lib/string.h"
+#include "lib/queue.h"
 
 
 #define LIBQ_DEBUG_EN (0)
 
 
-//队列初始化。设置队列的内存首地址以及队列的大小。
-void queue_init(queue_t *queue, void *buf, uint16 len, uint16 size)
+void queue_init(queue_t *queue, void *buf, unsigned int len, unsigned int size)
 {
     if (queue == NULL) {
         return;
@@ -23,7 +23,7 @@ void queue_init(queue_t *queue, void *buf, uint16 len, uint16 size)
     queue->size = size;
     queue->widx = 0;
     queue->ridx = 0;
-    queue->full = 0x00;
+    queue->full = 0;
 }
 
 
@@ -35,43 +35,43 @@ void queue_clear(queue_t *queue)
 
     queue->widx = 0;
     queue->ridx = 0;
-    queue->full = 0x00;
+    queue->full = 0;
 }
 
 
-uint8 queue_is_empty(const queue_t *queue)
+int queue_is_empty(const queue_t *queue)
 {
     if (queue == NULL) {
-        return 0x00;
+        return 0;
     }
 
-    if ((queue->widx == queue->ridx) && (queue->full == 0x00)) {
-        return 0x01;
+    if ((queue->widx == queue->ridx) && (queue->full == 0)) {
+        return 1;
     }
 
-    return 0x00;
+    return 0;
 
-//    return (queue->ridx == queue->widx) ? 0x01 : 0x00;
+//    return (queue->ridx == queue->widx) ? 1 : 0;
 }
 
 
-uint8 queue_is_full(const queue_t *queue)
+int queue_is_full(const queue_t *queue)
 {
     if (queue == NULL) {
-        return 0x00;
+        return 0;
     }
 
     return queue->full;
 
-//	return (queue->ridx == (queue->widx + 1) % queue->len) ? 0x01 : 0x00;
+//  return (queue->ridx == (queue->widx + 1) % queue->len) ? 1 : 0;
 }
 
 
 //获取队列元素个数。
-uint16 queue_item_len(const queue_t *queue)
+unsigned int queue_item_len(const queue_t *queue)
 {
     if (queue == NULL) {
-        return 0x00;
+        return 0;
     }
 
     if (queue->full) {
@@ -80,65 +80,49 @@ uint16 queue_item_len(const queue_t *queue)
         return (queue->widx + queue->len - queue->ridx) % queue->len;
     }
 
-//	return (queue->widx + queue->len - queue->ridx) % queue->len;
+//  return (queue->widx + queue->len - queue->ridx) % queue->len;
 }
 
 
 //获取队列剩余空间。
-uint16 queue_free_len(const queue_t *queue)
+unsigned int queue_free_len(const queue_t *queue)
 {
     if (queue == NULL) {
-        return 0x00;
+        return 0;
     }
 
-    if ((queue->widx == queue->ridx) && (queue->full == 0x00)) {
+    if ((queue->widx == queue->ridx) && (queue->full == 0)) {
         return queue->len;
     } else {
         return (queue->ridx + queue->len - queue->widx) % queue->len;
     }
 
-//	return (queue->ridx + queue->len - 1 - queue->widx) % queue->len;
-}
-
-
-#if (LIBQ_DEBUG_EN)
-static void mem_set(uint8 *dst, uint8 val, uint16 len)
-{
-    while (len--) {
-        *dst++ = val;
-    }
-}
-#endif
-static void mem_cpy(uint8 *dst, uint8 *src, uint16 len)
-{
-    while (len--) {
-        *dst++ = *src++;
-    }
+//  return (queue->ridx + queue->len - 1 - queue->widx) % queue->len;
 }
 
 
 //向queue队尾写入len个数据项。返回实际写入的数据项个数。
-uint16 queue_write(queue_t *queue, void *buf, uint16 len)
+unsigned int queue_write(queue_t *queue, void *buf, unsigned int len)
 {
     if ((queue == NULL) || (buf == NULL) || (len == 0)) {
         return 0x00;
     }
 
-    uint16 cnt = 0;
+    unsigned int cnt = 0;
 
     for (cnt = 0; cnt < len; cnt++) {
-		/* circle queue is full */
+        /* circle queue is full */
         if (queue->full) {
-		//if (queue->ridx == (queue->widx + 1) % queue->len) {
+            //if (queue->ridx == (queue->widx + 1) % queue->len) {
             break;
         } else {
-            mem_cpy((uint8 *)queue->buf + queue->widx * queue->size,
-                    (uint8 *)buf + cnt * queue->size,
-                    queue->size);
+            memcpy(queue->buf + queue->widx * queue->size,
+                   buf + cnt * queue->size,
+                   queue->size);
             queue->widx = (queue->widx + 1) % queue->len;
 
             if (queue->ridx == queue->widx) {
-                queue->full = 0x01;
+                queue->full = 1;
             }
         }
     }
@@ -148,32 +132,32 @@ uint16 queue_write(queue_t *queue, void *buf, uint16 len)
 
 
 //向queue队尾rewind写入len个数据项。返回实际写入的数据项个数。
-uint16 queue_write_rewind(queue_t *queue, void *buf, uint16 len)
+unsigned int queue_write_rewind(queue_t *queue, void *buf, unsigned int len)
 {
     if ((queue == NULL) || (buf == NULL) || (len == 0)) {
         return 0x00;
     }
 
-    uint16 cnt = 0;
+    unsigned int cnt = 0;
 
     for (cnt = 0; cnt < len; cnt++) {
-		/* circle queue is full */
+        /* circle queue is full */
         if (queue->full) {
-		//if (queue->ridx == (queue->widx + 1) % queue->len) {
+            //if (queue->ridx == (queue->widx + 1) % queue->len) {
 #if (LIBQ_DEBUG_EN)
-            mem_set((uint8 *)queue->buf + queue->ridx * queue->size,
-                    0x00,
-                    queue->size);
+            memset(queue->buf + queue->ridx * queue->size,
+                   0x00,
+                   queue->size);
 #endif
             queue->ridx = (queue->ridx + 1) % queue->len;
         }
-        mem_cpy((uint8 *)queue->buf + queue->widx * queue->size,
-                (uint8 *)buf + cnt * queue->size,
-                queue->size);
+        memcpy(queue->buf + queue->widx * queue->size,
+               buf + cnt * queue->size,
+               queue->size);
         queue->widx = (queue->widx + 1) % queue->len;
 
         if (queue->ridx == queue->widx) {
-            queue->full = 0x01;
+            queue->full = 1;
         }
     }
 
@@ -182,26 +166,26 @@ uint16 queue_write_rewind(queue_t *queue, void *buf, uint16 len)
 
 
 //向queue队首写入len个数据项。返回实际写入的数据项个数。
-uint16 queue_push(queue_t *queue, void *buf, uint16 len)
+unsigned int queue_push(queue_t *queue, void *buf, unsigned int len)
 {
     if ((queue == NULL) || (buf == NULL) || (len == 0)) {
         return 0x00;
     }
 
-    uint16 cnt = 0;
+    unsigned int cnt = 0;
 
     for (cnt = 0; cnt < len; cnt++) {
-		/* circle queue is full */
+        /* circle queue is full */
         if (queue->full) {
-		//if (queue->ridx == (queue->widx + 1) % queue->len) {
+            //if (queue->ridx == (queue->widx + 1) % queue->len) {
             break;
         } else {
             queue->ridx = (queue->ridx + queue->len - 1) % queue->len;
-            mem_cpy((uint8 *)queue->buf + queue->ridx * queue->size,
-                    (uint8 *)buf + cnt * queue->size,
-                    queue->size);
+            memcpy(queue->buf + queue->ridx * queue->size,
+                   buf + cnt * queue->size,
+                   queue->size);
             if (queue->ridx == queue->widx) {
-                queue->full = 0x01;
+                queue->full = 1;
             }
         }
     }
@@ -212,26 +196,26 @@ uint16 queue_push(queue_t *queue, void *buf, uint16 len)
 
 
 //向queue队首rewind写入len个数据项。返回实际写入的数据项个数。
-uint16 queue_push_rewind(queue_t *queue, void *buf, uint16 len)
+unsigned int queue_push_rewind(queue_t *queue, void *buf, unsigned int len)
 {
     if ((queue == NULL) || (buf == NULL) || (len == 0)) {
         return 0x00;
     }
 
-    uint16 cnt = 0;
+    unsigned int cnt = 0;
 
     for (cnt = 0; cnt < len; cnt++) {
-		/* circle queue is full */
+        /* circle queue is full */
         if (queue->full) {
-		//if (queue->ridx == (queue->widx + 1) % queue->len) {
+            //if (queue->ridx == (queue->widx + 1) % queue->len) {
             break;
         } else {
             queue->ridx = (queue->ridx + queue->len - 1) % queue->len;
-            mem_cpy((uint8 *)queue->buf + queue->ridx * queue->size,
-                    (uint8 *)buf + cnt * queue->size,
-                    queue->size);
+            memcpy(queue->buf + queue->ridx * queue->size,
+                   buf + cnt * queue->size,
+                   queue->size);
             if (queue->ridx == queue->widx) {
-                queue->full = 0x01;
+                queue->full = 1;
             }
         }
     }
@@ -241,30 +225,30 @@ uint16 queue_push_rewind(queue_t *queue, void *buf, uint16 len)
 
 
 //从queue中(队首)读取len个数据项到buf中。返回实际读取的数据项个数。
-uint16 queue_read(queue_t *queue, void *buf, uint16 len)
+unsigned int queue_read(queue_t *queue, void *buf, unsigned int len)
 {
     if ((queue == NULL) || (buf == NULL) || (len == 0)) {
         return 0x00;
     }
 
-    uint16 cnt = 0;
+    unsigned int cnt = 0;
 
     for (cnt = 0; cnt < len; cnt++) {
         /* circle queue is empty */
-        if ((queue->ridx == queue->widx) && (queue->full == 0x00)) {
-		//if (queue->ridx == queue->widx) {
+        if ((queue->ridx == queue->widx) && (queue->full == 0)) {
+            //if (queue->ridx == queue->widx) {
             break;
         } else {
-            mem_cpy((uint8 *)buf + cnt * queue->size,
-                    (uint8 *)queue->buf + queue->ridx * queue->size,
-                    queue->size);
+            memcpy(buf + cnt * queue->size,
+                   queue->buf + queue->ridx * queue->size,
+                   queue->size);
 #if (LIBQ_DEBUG_EN)
-            mem_set((uint8 *)queue->buf + queue->ridx * queue->size,
-                    0x00,
-                    queue->size);
+            memset(queue->buf + queue->ridx * queue->size,
+                   0x00,
+                   queue->size);
 #endif
             queue->ridx = (queue->ridx + 1) % queue->len;
-            queue->full = 0x00;
+            queue->full = 0;
         }
     }
 

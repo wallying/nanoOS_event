@@ -18,7 +18,7 @@ typedef void *list_t;
 
 
 void  list_init(list_t *list);
-void  list_copy(list_t *dest, const list_t *src);
+void  list_copy(list_t *dst, const list_t *src);
 void *list_head(const list_t *list);
 void *list_tail(const list_t *list);
 void *list_srch(const list_t *list, const void *node);
@@ -37,3 +37,4 @@ int   list_length(const list_t *list);
 
 
 #endif /* __LIST_H__ */
+

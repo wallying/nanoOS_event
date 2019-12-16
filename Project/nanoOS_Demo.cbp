@@ -15,8 +15,9 @@
 					<Add option="-g" />
 					<Add directory="../app" />
 					<Add directory="../bsp" />
-					<Add directory="../lib" />
-					<Add directory="../nanoos" />
+					<Add directory="../sys" />
+					<Add directory="../sys/core" />
+					<Add directory="../sys/lib" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,8 +29,9 @@
 					<Add option="-O2" />
 					<Add directory="../app" />
 					<Add directory="../bsp" />
-					<Add directory="../lib" />
-					<Add directory="../nanoos" />
+					<Add directory="../sys" />
+					<Add directory="../sys/core" />
+					<Add directory="../sys/lib" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -38,6 +40,11 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="../app" />
+			<Add directory="../bsp" />
+			<Add directory="../sys" />
+			<Add directory="../sys/core" />
+			<Add directory="../sys/lib" />
 		</Compiler>
 		<Unit filename="../app/Task_Main.c">
 			<Option compilerVar="CC" />
@@ -51,31 +58,31 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../bsp/bsp.h" />
-		<Unit filename="../lib/liblist.c">
+		<Unit filename="../sys/core/os_api.h" />
+		<Unit filename="../sys/core/os_cfg.h" />
+		<Unit filename="../sys/core/os_core.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../lib/liblist.h" />
-		<Unit filename="../lib/libqueue.c">
+		<Unit filename="../sys/core/os_port.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../lib/libqueue.h" />
-		<Unit filename="../lib/libstd.c">
+		<Unit filename="../sys/core/os_timer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../lib/libstd.h" />
-		<Unit filename="../lib/libtype.h" />
-		<Unit filename="../lib/libutil.h" />
-		<Unit filename="../nanoos/os_api.h" />
-		<Unit filename="../nanoos/os_cfg.h" />
-		<Unit filename="../nanoos/os_core.c">
+		<Unit filename="../sys/lib/libtype.h" />
+		<Unit filename="../sys/lib/list.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../nanoos/os_port.c">
+		<Unit filename="../sys/lib/list.h" />
+		<Unit filename="../sys/lib/queue.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../nanoos/os_timer.c">
+		<Unit filename="../sys/lib/queue.h" />
+		<Unit filename="../sys/lib/string.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../sys/lib/string.h" />
+		<Unit filename="../sys/lib/utility.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

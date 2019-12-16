@@ -24,13 +24,13 @@ void list_init(list_t *list)
 }
 
 
-void list_copy(list_t *dest, const list_t *src)
+void list_copy(list_t *dst, const list_t *src)
 {
-    if ((dest == NULL) || (src == NULL)) {
+    if ((dst == NULL) || (src == NULL)) {
         return;
     }
 
-    *dest = *src;
+    *dst = *src;
 }
 
 

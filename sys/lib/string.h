@@ -25,31 +25,31 @@ typedef char* va_list;
 
 
 
-void *lib_memset(void *buf, int val, unsigned int cnt);
-void *lib_memcpy(void *dst, const void *src, unsigned int cnt);
-void *lib_memmove(void *dst, const void *src, unsigned int cnt);
-int   lib_memcmp(const void *buf1, const void *buf2, unsigned int cnt);
+void *memset(void *buf, int val, unsigned int cnt);
+void *memcpy(void *dst, const void *src, unsigned int cnt);
+void *memmove(void *dst, const void *src, unsigned int cnt);
+int   memcmp(const void *buf1, const void *buf2, unsigned int cnt);
 
 
-char *lib_strcpy(char *dst, const char *src);
-char *lib_strncpy(char *dst, const char *src, unsigned int cnt);
+char *strcpy(char *dst, const char *src);
+char *strncpy(char *dst, const char *src, unsigned int cnt);
 
-char *lib_strcat(char *dst, const char *src);
-char *lib_strncat(char *dst, const char *src, unsigned int cnt);
+char *strcat(char *dst, const char *src);
+char *strncat(char *dst, const char *src, unsigned int cnt);
 
-int lib_strcmp(const char *str1, const char *str2);
-int lib_strncmp(const char *str1, const char *str2, unsigned int cnt);
+int strcmp(const char *str1, const char *str2);
+int strncmp(const char *str1, const char *str2, unsigned int cnt);
 
-unsigned int lib_strlen(const char *str);
-unsigned int lib_strnlen(const char *str, unsigned int cnt);
+unsigned int strlen(const char *str);
+unsigned int strnlen(const char *str, unsigned int cnt);
 
-char *lib_strchr(const char *str, int c);
-char *lib_strnchr(const char *str, unsigned int cnt, int c);
+char *strchr(const char *str, int c);
+char *strnchr(const char *str, unsigned int cnt, int c);
 
 
-int lib_vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args);
-int lib_sprintf(char *buf, const char *fmt, ...);
-int lib_snprintf(char *buf, unsigned int cnt, const char *fmt, ...);
+int vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args);
+int sprintf(char *buf, const char *fmt, ...);
+int snprintf(char *buf, unsigned int cnt, const char *fmt, ...);
 
 
 
