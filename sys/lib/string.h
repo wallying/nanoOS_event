@@ -1,12 +1,12 @@
 /**
- * file:    libstd.h
+ * file:    string.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __LIBSTD_H__
-#define __LIBSTD_H__
+#ifndef __STRING_H__
+#define __STRING_H__
 
 
 #include "libtype.h"
@@ -53,4 +53,4 @@ int lib_snprintf(char *buf, unsigned int cnt, const char *fmt, ...);
 
 
 
-#endif /* __LIBSTD_H__ */
+#endif /* __STRING_H__ */

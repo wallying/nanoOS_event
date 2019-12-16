@@ -1,17 +1,13 @@
 /**
- * file:    libutil.h
+ * file:    utility.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __LIBUTIL_H__
-#define __LIBUTIL_H__
+#ifndef __UTILITY_H__
+#define __UTILITY_H__
 
-
-#ifndef NULL
-#define NULL ((void *)0)
-#endif
 
 #ifndef BIT
 #define BIT(n)          (0x01 << (n))
@@ -81,4 +77,4 @@
 #endif
 
 
-#endif /* __LIBUTIL_H__ */
+#endif /* __UTILITY_H__ */

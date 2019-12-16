@@ -1,12 +1,12 @@
 /**
- * file:    libqueue.h
+ * file:    queue.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __LIBQUEUE_H__
-#define __LIBQUEUE_H__
+#ifndef __QUEUE_H__
+#define __QUEUE_H__
 
 
 #ifndef NULL
@@ -49,4 +49,4 @@ uint16 queue_push_rewind(queue_t *queue, void *buf, uint16 len);
 uint16 queue_read(queue_t *queue, void *buf, uint16 len);
 
 
-#endif /* __LIBQUEUE_H__ */
+#endif /* __QUEUE_H__ */

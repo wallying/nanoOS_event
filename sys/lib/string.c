@@ -1,11 +1,11 @@
 /**
- * file:    libstd.c
+ * file:    string.c
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#include "libstd.h"
+#include "string.h"
 
 
 void *lib_memset(void *buf, int val, unsigned int cnt)

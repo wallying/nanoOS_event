@@ -1,12 +1,12 @@
 /**
- * file:    liblist.h
+ * file:    list.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __LIBLIST_H__
-#define __LIBLIST_H__
+#ifndef __LIST_H__
+#define __LIST_H__
 
 
 #ifndef NULL
@@ -36,4 +36,4 @@ void *list_remove_tail(list_t *list);
 int   list_length(const list_t *list);
 
 
-#endif /* __LIBLIST_H__ */
+#endif /* __LIST_H__ */

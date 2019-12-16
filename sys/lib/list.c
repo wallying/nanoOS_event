@@ -1,11 +1,11 @@
 /**
- * file:    liblist.c
+ * file:    list.c
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#include "liblist.h"
+#include "list.h"
 
 
 /* Base structure of singly linked list node */
