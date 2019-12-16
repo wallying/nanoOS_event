@@ -49,6 +49,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../bsp/bsp.h" />
+		<Unit filename="../lib/liblist.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/liblist.h" />
+		<Unit filename="../lib/libqueue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/libqueue.h" />
 		<Unit filename="../lib/libstd.c">
 			<Option compilerVar="CC" />
 		</Unit>

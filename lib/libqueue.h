@@ -25,10 +25,6 @@ typedef unsigned int uint32;
 typedef signed long long int64;
 typedef unsigned long long uint64;
 
-#ifndef ARRAY_SIZE
-#define ARRAY_SIZE(a)   (sizeof(a) / sizeof(a[0]))
-#endif
-
 
 typedef struct {
     void *buf;      //队列的起始地址
