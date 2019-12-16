@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="nanoOS_Demo" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/nanoOS_Demo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+					<Add directory="../app" />
+					<Add directory="../bsp" />
+					<Add directory="../nanoos" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/nanoOS_Demo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../app" />
+					<Add directory="../bsp" />
+					<Add directory="../nanoos" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../app/Task_Main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../app/Task_Main.h" />
+		<Unit filename="../app/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../app/main.h" />
+		<Unit filename="../bsp/bsp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../bsp/bsp.h" />
+		<Unit filename="../lib/libstd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../lib/libstd.h" />
+		<Unit filename="../nanoos/os_api.h" />
+		<Unit filename="../nanoos/os_cfg.h" />
+		<Unit filename="../nanoos/os_core.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nanoos/os_port.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../nanoos/os_timer.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -17,7 +17,7 @@ int main(void)
 
     OS_INT_ENABLE();
 
-    os_init(main_loop_callback, NULL);
+    os_init(main_loop_callback, main_idle_callback);
 
     /* user task init */
     os_task_init(&task_main, task_mainEntry, NULL);
