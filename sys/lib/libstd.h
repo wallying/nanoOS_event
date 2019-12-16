@@ -9,9 +9,7 @@
 #define __LIBSTD_H__
 
 
-#ifndef NULL
-#define NULL ((void *)0)
-#endif
+#include "libtype.h"
 
 
 typedef char* va_list;

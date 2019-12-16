@@ -15,6 +15,7 @@
 					<Add option="-g" />
 					<Add directory="../app" />
 					<Add directory="../bsp" />
+					<Add directory="../lib" />
 					<Add directory="../nanoos" />
 				</Compiler>
 			</Target>
@@ -27,6 +28,7 @@
 					<Add option="-O2" />
 					<Add directory="../app" />
 					<Add directory="../bsp" />
+					<Add directory="../lib" />
 					<Add directory="../nanoos" />
 				</Compiler>
 				<Linker>
@@ -61,6 +63,8 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../lib/libstd.h" />
+		<Unit filename="../lib/libtype.h" />
+		<Unit filename="../lib/libutil.h" />
 		<Unit filename="../nanoos/os_api.h" />
 		<Unit filename="../nanoos/os_cfg.h" />
 		<Unit filename="../nanoos/os_core.c">
