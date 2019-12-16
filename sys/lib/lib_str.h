@@ -1,15 +1,15 @@
 /**
- * file:    string.h
+ * file:    lib_str.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __STRING_H__
-#define __STRING_H__
+#ifndef __LIB_STR_H__
+#define __LIB_STR_H__
 
 
-#include "libtype.h"
+#include "os_type.h"
 
 
 typedef char* va_list;
@@ -23,12 +23,6 @@ typedef char* va_list;
 
 #define va_end(ap)      (ap = (va_list)0)
 
-
-
-void *memset(void *buf, int val, unsigned int cnt);
-void *memcpy(void *dst, const void *src, unsigned int cnt);
-void *memmove(void *dst, const void *src, unsigned int cnt);
-int   memcmp(const void *buf1, const void *buf2, unsigned int cnt);
 
 
 char *strcpy(char *dst, const char *src);
@@ -53,4 +47,4 @@ int snprintf(char *buf, unsigned int cnt, const char *fmt, ...);
 
 
 
-#endif /* __STRING_H__ */
+#endif /* __LIB_STR_H__ */

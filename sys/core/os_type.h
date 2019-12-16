@@ -1,12 +1,12 @@
 /**
- * file:    libtype.h
+ * file:    os_type.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __LIBTYPE_H__
-#define __LIBTYPE_H__
+#ifndef __OS_TYPE_H__
+#define __OS_TYPE_H__
 
 
 #ifndef NULL
@@ -31,5 +31,5 @@ typedef signed long long os_s64;
 typedef unsigned long long os_u64;
 
 
-#endif /* __LIBTYPE_H__ */
+#endif /* __OS_TYPE_H__ */
 

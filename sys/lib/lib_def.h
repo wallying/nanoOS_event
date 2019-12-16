@@ -1,12 +1,12 @@
 /**
- * file:    utility.h
+ * file:    lib_def.h
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
-#ifndef __UTILITY_H__
-#define __UTILITY_H__
+#ifndef __LIB_DEF_H__
+#define __LIB_DEF_H__
 
 
 #ifndef BIT
@@ -77,4 +77,4 @@
 #endif
 
 
-#endif /* __UTILITY_H__ */
+#endif /* __LIB_DEF_H__ */

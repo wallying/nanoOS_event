@@ -69,7 +69,24 @@
 		<Unit filename="../sys/core/os_timer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/libtype.h" />
+		<Unit filename="../sys/core/os_type.h" />
+		<Unit filename="../sys/lib/lib_ascii.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_ascii.h" />
+		<Unit filename="../sys/lib/lib_def.h" />
+		<Unit filename="../sys/lib/lib_math.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_math.h" />
+		<Unit filename="../sys/lib/lib_mem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_mem.h" />
+		<Unit filename="../sys/lib/lib_str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_str.h" />
 		<Unit filename="../sys/lib/list.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -78,11 +95,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../sys/lib/queue.h" />
-		<Unit filename="../sys/lib/string.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../sys/lib/string.h" />
-		<Unit filename="../sys/lib/utility.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

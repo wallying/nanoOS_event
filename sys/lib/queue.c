@@ -5,7 +5,7 @@
  **/
 
 
-#include "lib/string.h"
+#include "lib/lib_mem.h"
 #include "lib/queue.h"
 
 
