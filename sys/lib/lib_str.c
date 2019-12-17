@@ -1,7 +1,7 @@
 /**
  * file:    lib_str.c
  * author:  wallying@foxmail.com
- * date:    2019-12-16
+ * date:    2019-12-17
  **/
 
 
@@ -37,7 +37,7 @@ char *str_cat(char *dst, const char *src)
 }
 
 
-char *strncat(char *dst, const char *src, unsigned int cnt)
+char *str_ncat(char *dst, const char *src, unsigned int cnt)
 {
     char *ptr = dst;
     if (cnt) {
@@ -113,30 +113,4 @@ char *str_nchr(const char *str, unsigned int cnt, int c)
 	return NULL;
 }
 
-
-/*----------------------------------------------------------------------------*/
-int vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args)
-{
-    return 0;
-}
-
-
-int sprintf(char *buf, const char *fmt, ...)
-{
-    va_list args;
-    va_start(args, fmt);
-    int len = vsnprintf(buf, ((unsigned int)(~0)), fmt, args);
-    va_end(args);
-    return len;
-}
-
-
-int snprintf(char *buf, unsigned int cnt, const char *fmt, ...)
-{
-    va_list args;
-    va_start(args, fmt);
-    int len = vsnprintf(buf, cnt, fmt, args);
-    va_end(args);
-    return len;
-}
 
