@@ -8,7 +8,7 @@
 #include "lib/lib_mem.h"
 
 
-void *memset(void *buf, int val, unsigned int cnt)
+void *mem_set(void *buf, int val, unsigned int cnt)
 {
     void *ptr = buf;
     while (cnt--) {
@@ -18,7 +18,7 @@ void *memset(void *buf, int val, unsigned int cnt)
 }
 
 
-void *memcpy(void *dst, const void *src, unsigned int cnt)
+void *mem_cpy(void *dst, const void *src, unsigned int cnt)
 {
     void *ptr = dst;
     while (cnt--) {
@@ -28,7 +28,7 @@ void *memcpy(void *dst, const void *src, unsigned int cnt)
 }
 
 
-void *memmove(void *dst, const void *src, unsigned int cnt)
+void *mem_move(void *dst, const void *src, unsigned int cnt)
 {
     char *dp = dst;
     const char *sp = src;
@@ -47,7 +47,7 @@ void *memmove(void *dst, const void *src, unsigned int cnt)
 }
 
 
-int memcmp(const void *buf1, const void *buf2, unsigned int cnt)
+int mem_cmp(const void *buf1, const void *buf2, unsigned int cnt)
 {
     int ret = 0;
     while (cnt--) {

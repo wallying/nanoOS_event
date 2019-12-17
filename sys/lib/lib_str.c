@@ -8,7 +8,7 @@
 #include "lib/lib_str.h"
 
 
-char *strcpy(char *dst, const char *src)
+char *str_cpy(char *dst, const char *src)
 {
     char *ptr = dst;
     while ((*dst++ = *src++) != '\0');
@@ -16,7 +16,7 @@ char *strcpy(char *dst, const char *src)
 }
 
 
-char *strncpy(char *dst, const char *src, unsigned int cnt)
+char *str_ncpy(char *dst, const char *src, unsigned int cnt)
 {
     char *ptr = dst;
     while (cnt--) {
@@ -28,7 +28,7 @@ char *strncpy(char *dst, const char *src, unsigned int cnt)
 }
 
 
-char *strcat(char *dst, const char *src)
+char *str_cat(char *dst, const char *src)
 {
     char *ptr = dst;
     while (*dst++);
@@ -51,7 +51,7 @@ char *strncat(char *dst, const char *src, unsigned int cnt)
 }
 
 
-int strcmp(const char *str1, const char *str2)
+int str_cmp(const char *str1, const char *str2)
 {
     int ret = 0;
     while (1) {
@@ -63,7 +63,7 @@ int strcmp(const char *str1, const char *str2)
 }
 
 
-int strncmp(const char *str1, const char *str2, unsigned int cnt)
+int str_ncmp(const char *str1, const char *str2, unsigned int cnt)
 {
     int ret = 0;
     while (cnt--) {
@@ -75,7 +75,7 @@ int strncmp(const char *str1, const char *str2, unsigned int cnt)
 }
 
 
-unsigned int strlen(const char *str)
+unsigned int str_len(const char *str)
 {
     const char *ptr = str;
     for (; *ptr != '\0'; ++ptr);
@@ -83,7 +83,7 @@ unsigned int strlen(const char *str)
 }
 
 
-unsigned int strnlen(const char *str, unsigned int cnt)
+unsigned int str_nlen(const char *str, unsigned int cnt)
 {
     const char *ptr = str;
     for (; cnt-- && *ptr != '\0'; ++ptr);
@@ -91,7 +91,7 @@ unsigned int strnlen(const char *str, unsigned int cnt)
 }
 
 
-char *strchr(const char *str, int c)
+char *str_chr(const char *str, int c)
 {
 	for (; *str != (char)c; ++str) {
 		if (*str == '\0') {
@@ -102,7 +102,7 @@ char *strchr(const char *str, int c)
 }
 
 
-char *strnchr(const char *str, unsigned int cnt, int c)
+char *str_nchr(const char *str, unsigned int cnt, int c)
 {
 	while (cnt--) {
 		if (*str == (char)c)

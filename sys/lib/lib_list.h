@@ -1,7 +1,7 @@
 /**
  * file:    lib_list.h
  * author:  wallying@foxmail.com
- * date:    2019-12-16
+ * date:    2019-12-17
  **/
 
 
@@ -12,6 +12,11 @@
 #ifndef NULL
 #define NULL ((void *)0)
 #endif
+
+
+#define LIB_LIST(name) \
+        list_t name##_list = NULL; \
+        list_t *name = &name##_list
 
 
 typedef void *list_t;
