@@ -1,12 +1,12 @@
 /**
- * file:    queue.h
+ * file:    lib_queue.h
  * author:  wallying@foxmail.com
- * date:    2019-12-16
+ * date:    2019-12-17
  **/
 
 
-#ifndef __QUEUE_H__
-#define __QUEUE_H__
+#ifndef __LIB_QUEUE_H__
+#define __LIB_QUEUE_H__
 
 
 typedef struct {
@@ -32,4 +32,4 @@ unsigned int queue_push_rewind(queue_t *queue, void *buf, unsigned int len);
 unsigned int queue_read(queue_t *queue, void *buf, unsigned int len);
 
 
-#endif /* __QUEUE_H__ */
+#endif /* __LIB_QUEUE_H__ */

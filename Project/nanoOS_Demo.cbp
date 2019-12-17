@@ -75,6 +75,10 @@
 		</Unit>
 		<Unit filename="../sys/lib/lib_ascii.h" />
 		<Unit filename="../sys/lib/lib_def.h" />
+		<Unit filename="../sys/lib/lib_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_list.h" />
 		<Unit filename="../sys/lib/lib_math.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -83,18 +87,14 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../sys/lib/lib_mem.h" />
+		<Unit filename="../sys/lib/lib_queue.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_queue.h" />
 		<Unit filename="../sys/lib/lib_str.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../sys/lib/lib_str.h" />
-		<Unit filename="../sys/lib/list.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../sys/lib/list.h" />
-		<Unit filename="../sys/lib/queue.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../sys/lib/queue.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

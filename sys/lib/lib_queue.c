@@ -1,12 +1,12 @@
 /**
- * file:    queue.c
+ * file:    lib_queue.c
  * author:  wallying@foxmail.com
  * date:    2019-12-16
  **/
 
 
 #include "lib/lib_mem.h"
-#include "lib/queue.h"
+#include "lib/lib_queue.h"
 
 
 #define LIBQ_DEBUG_EN (0)
