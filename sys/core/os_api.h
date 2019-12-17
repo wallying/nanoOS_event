@@ -1,7 +1,7 @@
 /**
  * file:    os_api.h
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  * brief:
  **/
 
@@ -12,19 +12,7 @@
 
 #include "os_cfg.h"
 #include "os_type.h"
-
-
-/*============================================================================*/
-/* os_cpu.h */
-
-typedef os_u32 os_tick; /* determined by MCU hardware timer bit */
-
-#define OS_INT_DISABLE()        //irq_disable()
-#define OS_INT_ENABLE()         //irq_enable()
-
-/* Implementation of the function should be completed by the user */
-void os_clock_init(void);
-os_tick os_tick_get(void);
+#include "os_cpu.h"
 
 
 /*============================================================================*/
