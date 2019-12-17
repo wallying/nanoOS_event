@@ -93,24 +93,26 @@ unsigned int str_nlen(const char *str, unsigned int cnt)
 
 char *str_chr(const char *str, int c)
 {
-	for (; *str != (char)c; ++str) {
-		if (*str == '\0') {
-			return NULL;
-		}
-	}
-	return (char *)str;
+    for (; *str != (char)c; ++str) {
+        if (*str == '\0') {
+            return NULL;
+        }
+    }
+    return (char *)str;
 }
 
 
 char *str_nchr(const char *str, unsigned int cnt, int c)
 {
-	while (cnt--) {
-		if (*str == (char)c)
-			return (char *)str;
-		if (*str++ == '\0')
-			break;
-	}
-	return NULL;
+    while (cnt--) {
+        if (*str == (char)c) {
+            return (char *)str;
+        }
+        if (*str++ == '\0') {
+            break;
+        }
+    }
+    return NULL;
 }
 
 

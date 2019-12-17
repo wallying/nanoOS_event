@@ -51,7 +51,7 @@ int mem_cmp(const void *buf1, const void *buf2, unsigned int cnt)
 {
     int ret = 0;
     while (cnt--) {
-        if ((ret = *(char *)buf1++ - *(char *)buf2++) != 0) {
+        if ((ret = *(char *)buf1++ - * (char *)buf2++) != 0) {
             break;
         }
     }

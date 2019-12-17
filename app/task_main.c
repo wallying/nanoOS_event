@@ -27,12 +27,9 @@ void cbTmr_CB(void *param)
 /*----------------------------------------------------------------------------*/
 void task_mainEntry(os_event evt, void *data)
 {
-    if (evt == OS_EVT_POLL)
-    {
+    if (evt == OS_EVT_POLL) {
 
-    }
-    else if (evt == OS_EVT_INIT)
-    {
+    } else if (evt == OS_EVT_INIT) {
         os_timer_start(&cbTmr, 1000, cbTmr_CB, &cbCnt);
     }
 }

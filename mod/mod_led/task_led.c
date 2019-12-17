@@ -14,12 +14,9 @@ os_tcb task_led;
 /*----------------------------------------------------------------------------*/
 void task_ledEntry(os_event evt, void *data)
 {
-    if (evt == OS_EVT_POLL)
-    {
+    if (evt == OS_EVT_POLL) {
 
-    }
-    else if (evt == OS_EVT_INIT)
-    {
+    } else if (evt == OS_EVT_INIT) {
 
     }
 }

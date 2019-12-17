@@ -133,13 +133,13 @@ void os_task_poll(os_tcb *tcb, os_flag flag)
 static void os_task_call(os_tcb *tcb, os_event evt, void *data)
 {
     if ((tcb != NULL) && (tcb->state == OS_STATE_RUNNING)) {
-		if (evt == OS_EVT_EXIT) {
-			os_task_exit(tcb, data);
-		} else {
-			if (tcb->task != NULL) {
-				tcb->task(evt, data);
-			}
-		}
+        if (evt == OS_EVT_EXIT) {
+            os_task_exit(tcb, data);
+        } else {
+            if (tcb->task != NULL) {
+                tcb->task(evt, data);
+            }
+        }
     }
 }
 
