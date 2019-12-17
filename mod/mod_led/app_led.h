@@ -1,20 +1,17 @@
 /**
- * file:    Task_Main.h
+ * file:    app_led.h
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  **/
 
 
-#ifndef __TASK_MAIN_H__
-#define __TASK_MAIN_H__
+#ifndef __APP_LED_H__
+#define __APP_LED_H__
 
 
 #include "os_api.h"
 
 
-extern os_tcb task_main;
-void task_mainEntry(os_event evt, void *data);
 
-
-#endif /* __TASK_MAIN_H__ */
+#endif /* __APP_LED_H__ */
 

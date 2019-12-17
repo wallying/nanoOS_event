@@ -1,21 +1,21 @@
 /**
- * file:    bsp.h
+ * file:    bsp_key.h
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  **/
 
 
-#ifndef __BSP_H__
-#define __BSP_H__
+#ifndef __BSP_KEY_H__
+#define __BSP_KEY_H__
 
 
 
 #include "os_api.h"
 
 
-void bsp_init(void);
+void bsp_keyInit(void);
 
 
-#endif /* __BSP_H__ */
+#endif /* __BSP_KEY_H__ */
 
 

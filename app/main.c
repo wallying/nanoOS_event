@@ -1,7 +1,7 @@
 /**
  * file:    main.c
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  **/
 
 
@@ -21,8 +21,8 @@ int main(void)
 
     /* user task init */
     os_task_init(&task_main, task_mainEntry, NULL);
-    //os_task_init(&task_key, task_keyEntry, NULL);
-    //os_task_init(&task_led, task_ledEntry, NULL);
+    os_task_init(&task_key, task_keyEntry, NULL);
+    os_task_init(&task_led, task_ledEntry, NULL);
 
     os_start();
 

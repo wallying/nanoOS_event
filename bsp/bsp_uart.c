@@ -1,14 +1,14 @@
 /**
- * file:    bsp_led.c
+ * file:    bsp_uart.c
  * author:  wallying@foxmail.com
  * date:    2019-12-17
  **/
 
 
-#include "bsp_led.h"
+#include "bsp_uart.h"
 
 
-void bsp_ledInit(void)
+void bsp_uartInit(void)
 {
 
 }

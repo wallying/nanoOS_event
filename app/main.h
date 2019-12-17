@@ -12,8 +12,9 @@
 #include "os_api.h"
 #include "bsp.h"
 
-#include "Task_Main.h"
-
+#include "task_main.h"
+#include "mod_key/task_key.h"
+#include "mod_led/task_led.h"
 
 enum {
     USER_EVT_NONE = OS_EVT_MAX,

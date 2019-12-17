@@ -8,9 +8,15 @@
 #include "bsp.h"
 
 
+void bsp_mcuInit(void)
+{
+
+}
+
+
 void bsp_init(void)
 {
-    //bsp_mcuInit();
-    //bsp_uartInit();
+    bsp_mcuInit();
+    bsp_uartInit();
 }
 

@@ -52,7 +52,7 @@ void os_task_init(os_tcb *tcb, os_task task, void *data)
     os_tcb *srch = os_task_list;
     for (; srch != NULL; srch = srch->next) {
         if (srch == tcb) {
-            return; /* tcb is already in the os_task_lis */
+            return; /* tcb is already in the os_task_list */
         }
         prev = srch;
     }

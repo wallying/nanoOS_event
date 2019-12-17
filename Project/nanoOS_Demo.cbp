@@ -16,6 +16,7 @@
 					<Add directory="../app" />
 					<Add directory="../bsp" />
 					<Add directory="../sys" />
+					<Add directory="../mod" />
 					<Add directory="../sys/core" />
 					<Add directory="../sys/lib" />
 				</Compiler>
@@ -30,6 +31,7 @@
 					<Add directory="../app" />
 					<Add directory="../bsp" />
 					<Add directory="../sys" />
+					<Add directory="../mod" />
 					<Add directory="../sys/core" />
 					<Add directory="../sys/lib" />
 				</Compiler>
@@ -43,26 +45,56 @@
 			<Add directory="../app" />
 			<Add directory="../bsp" />
 			<Add directory="../sys" />
+			<Add directory="../mod" />
 			<Add directory="../sys/core" />
 			<Add directory="../sys/lib" />
 		</Compiler>
-		<Unit filename="../app/Task_Main.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../app/Task_Main.h" />
 		<Unit filename="../app/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../app/main.h" />
+		<Unit filename="../app/task_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../app/task_main.h" />
 		<Unit filename="../bsp/bsp.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../bsp/bsp.h" />
+		<Unit filename="../bsp/bsp_uart.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../bsp/bsp_uart.h" />
+		<Unit filename="../mod/mod_key/app_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_key/app_key.h" />
+		<Unit filename="../mod/mod_key/bsp_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_key/bsp_key.h" />
+		<Unit filename="../mod/mod_key/task_key.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_key/task_key.h" />
+		<Unit filename="../mod/mod_led/app_led.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_led/app_led.h" />
+		<Unit filename="../mod/mod_led/bsp_led.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_led/bsp_led.h" />
+		<Unit filename="../mod/mod_led/task_led.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../mod/mod_led/task_led.h" />
 		<Unit filename="../sys/core/os_api.h" />
 		<Unit filename="../sys/core/os_cfg.h" />
 		<Unit filename="../sys/core/os_core.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../sys/core/os_cpu.h" />
 		<Unit filename="../sys/core/os_port.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -87,6 +119,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../sys/lib/lib_mem.h" />
+		<Unit filename="../sys/lib/lib_print.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_print.h" />
 		<Unit filename="../sys/lib/lib_queue.c">
 			<Option compilerVar="CC" />
 		</Unit>

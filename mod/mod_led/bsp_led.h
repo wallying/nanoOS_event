@@ -1,21 +1,21 @@
 /**
- * file:    bsp.h
+ * file:    bsp_led.h
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  **/
 
 
-#ifndef __BSP_H__
-#define __BSP_H__
+#ifndef __BSP_LED_H__
+#define __BSP_LED_H__
 
 
 
 #include "os_api.h"
 
 
-void bsp_init(void);
+void bsp_ledInit(void);
 
 
-#endif /* __BSP_H__ */
+#endif /* __BSP_LED_H__ */
 
 

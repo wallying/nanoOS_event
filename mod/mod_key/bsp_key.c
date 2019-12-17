@@ -1,16 +1,15 @@
 /**
- * file:    bsp.c
+ * file:    bsp_key.c
  * author:  wallying@foxmail.com
- * date:    2019-11-27
+ * date:    2019-12-17
  **/
 
 
-#include "bsp.h"
+#include "bsp_key.h"
 
 
-void bsp_init(void)
+void bsp_keyInit(void)
 {
-    //bsp_mcuInit();
-    //bsp_uartInit();
+
 }
 
