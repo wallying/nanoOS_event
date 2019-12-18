@@ -19,11 +19,12 @@
 enum {
     USER_EVT_NONE = OS_EVT_MAX,
 
+    LED_EVT_CHANGE,
+    LED_EVT_UPDATE,
+
     KEY_EVT_DOWN,
     KEY_EVT_UP,
 
-    LED_EVT_PROC,
-    LED_EVT_FLASH,
 };
 
 
