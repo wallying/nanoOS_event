@@ -8,7 +8,7 @@
 #include "lib/lib_print.h"
 
 
-int vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args)
+int vsnprintf(char *buf, unsigned int num, const char *fmt, va_list args)
 {
     return 0;
 }
@@ -24,11 +24,11 @@ int sprintf(char *buf, const char *fmt, ...)
 }
 
 
-int snprintf(char *buf, unsigned int cnt, const char *fmt, ...)
+int snprintf(char *buf, unsigned int num, const char *fmt, ...)
 {
     va_list args;
     va_start(args, fmt);
-    int len = vsnprintf(buf, cnt, fmt, args);
+    int len = vsnprintf(buf, num, fmt, args);
     va_end(args);
     return len;
 }

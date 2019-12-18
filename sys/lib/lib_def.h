@@ -9,7 +9,7 @@
 #define __LIB_DEF_H__
 
 
-#include "os_type"
+#include "os_type.h"
 
 
 #ifndef BIT

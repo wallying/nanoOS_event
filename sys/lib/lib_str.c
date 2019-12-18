@@ -16,10 +16,10 @@ char *str_cpy(char *dst, const char *src)
 }
 
 
-char *str_ncpy(char *dst, const char *src, unsigned int cnt)
+char *str_ncpy(char *dst, const char *src, unsigned int num)
 {
     char *ptr = dst;
-    while (cnt--) {
+    while (num--) {
         if ((*dst++ = *src) != '\0') {
             ++src;
         }
@@ -37,12 +37,12 @@ char *str_cat(char *dst, const char *src)
 }
 
 
-char *str_ncat(char *dst, const char *src, unsigned int cnt)
+char *str_ncat(char *dst, const char *src, unsigned int num)
 {
     char *ptr = dst;
-    if (cnt) {
+    if (num) {
         while (*dst++);
-        while ((*dst++ = *src++) != '\0' && !--cnt) {
+        while ((*dst++ = *src++) != '\0' && !--num) {
             *dst = '\0';
             break;
         }
@@ -63,10 +63,10 @@ int str_cmp(const char *str1, const char *str2)
 }
 
 
-int str_ncmp(const char *str1, const char *str2, unsigned int cnt)
+int str_ncmp(const char *str1, const char *str2, unsigned int num)
 {
     int ret = 0;
-    while (cnt--) {
+    while (num--) {
         if ((ret = *str1 - *str2++) != 0 || !*str1++) {
             break;
         }
@@ -83,10 +83,10 @@ unsigned int str_len(const char *str)
 }
 
 
-unsigned int str_nlen(const char *str, unsigned int cnt)
+unsigned int str_nlen(const char *str, unsigned int num)
 {
     const char *ptr = str;
-    for (; cnt-- && *ptr != '\0'; ++ptr);
+    for (; num-- && *ptr != '\0'; ++ptr);
     return ptr - str;
 }
 
@@ -102,9 +102,9 @@ char *str_chr(const char *str, int c)
 }
 
 
-char *str_nchr(const char *str, unsigned int cnt, int c)
+char *str_nchr(const char *str, unsigned int num, int c)
 {
-    while (cnt--) {
+    while (num--) {
         if (*str == (char)c) {
             return (char *)str;
         }

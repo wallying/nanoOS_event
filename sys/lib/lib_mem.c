@@ -8,38 +8,38 @@
 #include "lib/lib_mem.h"
 
 
-void *mem_set(void *buf, int val, unsigned int cnt)
+void *mem_set(void *buf, int val, unsigned int num)
 {
     void *ptr = buf;
-    while (cnt--) {
+    while (num--) {
         *(char *)buf++ = (char)val;
     }
     return ptr;
 }
 
 
-void *mem_cpy(void *dst, const void *src, unsigned int cnt)
+void *mem_cpy(void *dst, const void *src, unsigned int num)
 {
     void *ptr = dst;
-    while (cnt--) {
+    while (num--) {
         *(char *)dst++ = *(char *)src++;
     }
     return ptr;
 }
 
 
-void *mem_move(void *dst, const void *src, unsigned int cnt)
+void *mem_move(void *dst, const void *src, unsigned int num)
 {
     char *dp = dst;
     const char *sp = src;
     if (dst <= src) {
-        while (cnt--) {
+        while (num--) {
             *dp++ = *sp++;
         }
     } else {
-        dp += cnt;
+        dp += num;
         sp = src;
-        while (cnt--) {
+        while (num--) {
             *--dp = *--sp;
         }
     }
@@ -47,10 +47,10 @@ void *mem_move(void *dst, const void *src, unsigned int cnt)
 }
 
 
-int mem_cmp(const void *buf1, const void *buf2, unsigned int cnt)
+int mem_cmp(const void *buf1, const void *buf2, unsigned int num)
 {
     int ret = 0;
-    while (cnt--) {
+    while (num--) {
         if ((ret = *(char *)buf1++ - * (char *)buf2++) != 0) {
             break;
         }

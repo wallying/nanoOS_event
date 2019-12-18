@@ -24,9 +24,9 @@ typedef char* va_list;
 #define va_end(ap)      (ap = (va_list)0)
 
 
-int vsnprintf(char *buf, unsigned int cnt, const char *fmt, va_list args);
+int vsnprintf(char *buf, unsigned int num, const char *fmt, va_list args);
 int sprintf(char *buf, const char *fmt, ...);
-int snprintf(char *buf, unsigned int cnt, const char *fmt, ...);
+int snprintf(char *buf, unsigned int num, const char *fmt, ...);
 
 
 #endif /* __LIB_PRINT_H__ */
