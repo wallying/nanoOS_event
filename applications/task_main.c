@@ -19,6 +19,7 @@ void cbTmr_CB(void *param)
     os_timer_restart(&cbTmr, 1000);
 
     cbCnt++;
+
     if (cbCnt == 100) {
         os_timer_stop(&cbTmr);
     }
@@ -29,6 +30,7 @@ void task_mainEntry(os_event evt, void *data)
 {
     if (evt == OS_EVT_POLL) {
 
+    	cbCnt = 0;
     } else if (evt == OS_EVT_INIT) {
         os_timer_start(&cbTmr, 1000, cbTmr_CB, &cbCnt);
     }

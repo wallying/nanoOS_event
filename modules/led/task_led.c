@@ -125,7 +125,7 @@ static os_u16 ledFlashControl(ledIdx_e led)
     return retTime;
 }
 
-/*----------------------------------------------------------------------------*/
+
 void task_ledEntry(os_event evt, void *data)
 {
     if (evt == OS_EVT_INIT) {

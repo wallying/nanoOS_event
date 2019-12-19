@@ -11,9 +11,9 @@
 
 
 #include "os_api.h"
-#include "bsp_uart.h"
-#include "mod_key/bsp_key.h"
-#include "mod_led/bsp_led.h"
+#include "print/bsp_uart.h"
+#include "key/bsp_key.h"
+#include "led/bsp_led.h"
 
 
 void bsp_mcuInit(void);

@@ -12,9 +12,12 @@
 #include "os_api.h"
 #include "bsp.h"
 
+
 #include "task_main.h"
-#include "mod_key/task_key.h"
-#include "mod_led/task_led.h"
+#include "key/task_key.h"
+#include "led/task_led.h"
+#include "print/app_uart.h"
+
 
 enum {
     USER_EVT_NONE = OS_EVT_MAX,
@@ -22,6 +25,7 @@ enum {
     LED_EVT_CHANGE,
     LED_EVT_UPDATE,
 
+	KEY_EVT_SCAN,
     KEY_EVT_DOWN,
     KEY_EVT_UP,
 

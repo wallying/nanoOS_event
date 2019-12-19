@@ -13,12 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="../app" />
-					<Add directory="../bsp" />
-					<Add directory="../sys" />
-					<Add directory="../mod" />
-					<Add directory="../sys/core" />
-					<Add directory="../sys/lib" />
+					<Add directory="../applications" />
+					<Add directory="../drivers" />
+					<Add directory="../libraries" />
+					<Add directory="../modules" />
+					<Add directory="../system" />
+					<Add directory="../system/core" />
+					<Add directory="../system/lib" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -28,12 +29,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="../app" />
-					<Add directory="../bsp" />
-					<Add directory="../sys" />
-					<Add directory="../mod" />
-					<Add directory="../sys/core" />
-					<Add directory="../sys/lib" />
+					<Add directory="../applications" />
+					<Add directory="../drivers" />
+					<Add directory="../libraries" />
+					<Add directory="../modules" />
+					<Add directory="../system" />
+					<Add directory="../system/core" />
+					<Add directory="../system/lib" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -42,99 +44,104 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="../app" />
-			<Add directory="../bsp" />
-			<Add directory="../sys" />
-			<Add directory="../mod" />
-			<Add directory="../sys/core" />
-			<Add directory="../sys/lib" />
+			<Add directory="../applications" />
+			<Add directory="../drivers" />
+			<Add directory="../libraries" />
+			<Add directory="../modules" />
+			<Add directory="../system" />
+			<Add directory="../system/core" />
+			<Add directory="../system/lib" />
 		</Compiler>
-		<Unit filename="../app/main.c">
+		<Unit filename="../applications/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../app/main.h" />
-		<Unit filename="../app/task_main.c">
+		<Unit filename="../applications/main.h" />
+		<Unit filename="../applications/task_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../app/task_main.h" />
-		<Unit filename="../bsp/bsp.c">
+		<Unit filename="../applications/task_main.h" />
+		<Unit filename="../drivers/bsp.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../bsp/bsp.h" />
-		<Unit filename="../bsp/bsp_uart.c">
+		<Unit filename="../drivers/bsp.h" />
+		<Unit filename="../modules/key/app_key.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../bsp/bsp_uart.h" />
-		<Unit filename="../mod/mod_key/app_key.c">
+		<Unit filename="../modules/key/app_key.h" />
+		<Unit filename="../modules/key/bsp_key.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_key/app_key.h" />
-		<Unit filename="../mod/mod_key/bsp_key.c">
+		<Unit filename="../modules/key/bsp_key.h" />
+		<Unit filename="../modules/key/task_key.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_key/bsp_key.h" />
-		<Unit filename="../mod/mod_key/task_key.c">
+		<Unit filename="../modules/key/task_key.h" />
+		<Unit filename="../modules/led/app_led.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_key/task_key.h" />
-		<Unit filename="../mod/mod_led/app_led.c">
+		<Unit filename="../modules/led/app_led.h" />
+		<Unit filename="../modules/led/bsp_led.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_led/app_led.h" />
-		<Unit filename="../mod/mod_led/bsp_led.c">
+		<Unit filename="../modules/led/bsp_led.h" />
+		<Unit filename="../modules/led/task_led.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_led/bsp_led.h" />
-		<Unit filename="../mod/mod_led/task_led.c">
+		<Unit filename="../modules/led/task_led.h" />
+		<Unit filename="../modules/print/app_uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../mod/mod_led/task_led.h" />
-		<Unit filename="../sys/core/os_api.h" />
-		<Unit filename="../sys/core/os_cfg.h" />
-		<Unit filename="../sys/core/os_core.c">
+		<Unit filename="../modules/print/app_uart.h" />
+		<Unit filename="../modules/print/bsp_uart.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/core/os_cpu.h" />
-		<Unit filename="../sys/core/os_port.c">
+		<Unit filename="../modules/print/bsp_uart.h" />
+		<Unit filename="../system/core/os_api.h" />
+		<Unit filename="../system/core/os_cfg.h" />
+		<Unit filename="../system/core/os_core.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/core/os_timer.c">
+		<Unit filename="../system/core/os_cpu.h" />
+		<Unit filename="../system/core/os_def.h" />
+		<Unit filename="../system/core/os_port.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/core/os_type.h" />
-		<Unit filename="../sys/lib/lib_ascii.c">
+		<Unit filename="../system/core/os_timer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_ascii.h" />
-		<Unit filename="../sys/lib/lib_def.h" />
-		<Unit filename="../sys/lib/lib_list.c">
+		<Unit filename="../system/core/os_type.h" />
+		<Unit filename="../system/lib/lib_ascii.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_list.h" />
-		<Unit filename="../sys/lib/lib_math.c">
+		<Unit filename="../system/lib/lib_ascii.h" />
+		<Unit filename="../system/lib/lib_list.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_math.h" />
-		<Unit filename="../sys/lib/lib_mem.c">
+		<Unit filename="../system/lib/lib_list.h" />
+		<Unit filename="../system/lib/lib_math.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_mem.h" />
-		<Unit filename="../sys/lib/lib_print.c">
+		<Unit filename="../system/lib/lib_math.h" />
+		<Unit filename="../system/lib/lib_mem.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_print.h" />
-		<Unit filename="../sys/lib/lib_queue.c">
+		<Unit filename="../system/lib/lib_mem.h" />
+		<Unit filename="../system/lib/lib_print.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_queue.h" />
-		<Unit filename="../sys/lib/lib_sort.c">
+		<Unit filename="../system/lib/lib_print.h" />
+		<Unit filename="../system/lib/lib_queue.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_sort.h" />
-		<Unit filename="../sys/lib/lib_str.c">
+		<Unit filename="../system/lib/lib_queue.h" />
+		<Unit filename="../system/lib/lib_sort.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../sys/lib/lib_str.h" />
+		<Unit filename="../system/lib/lib_sort.h" />
+		<Unit filename="../system/lib/lib_str.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../system/lib/lib_str.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

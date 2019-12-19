@@ -57,7 +57,6 @@ typedef struct {
 
 extern os_tcb task_led;
 
-
 void app_ledStart(ledIdx_e led, ledPrio_e prio);
 void app_ledStop(ledIdx_e led, ledPrio_e prio);
 void task_ledEntry(os_event evt, void *data);
