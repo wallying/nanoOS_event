@@ -127,6 +127,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../sys/lib/lib_queue.h" />
+		<Unit filename="../sys/lib/lib_sort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../sys/lib/lib_sort.h" />
 		<Unit filename="../sys/lib/lib_str.c">
 			<Option compilerVar="CC" />
 		</Unit>

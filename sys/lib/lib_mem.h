@@ -12,10 +12,10 @@
 #include "os_type.h"
 
 
-void *mem_set(void *buf, int val, unsigned int cnt);
-void *mem_cpy(void *dst, const void *src, unsigned int cnt);
-void *mem_move(void *dst, const void *src, unsigned int cnt);
-int   mem_cmp(const void *buf1, const void *buf2, unsigned int cnt);
+void *mem_set(void *buf, int val, unsigned int num);
+void *mem_cpy(void *dst, const void *src, unsigned int num);
+void *mem_move(void *dst, const void *src, unsigned int num);
+int   mem_cmp(const void *buf1, const void *buf2, unsigned int num);
 
 
 
