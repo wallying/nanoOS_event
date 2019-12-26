@@ -13,10 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
-					<Add directory="../applications" />
-					<Add directory="../drivers" />
-					<Add directory="../libraries" />
-					<Add directory="../modules" />
+					<Add directory="../app" />
 					<Add directory="../system" />
 					<Add directory="../system/core" />
 					<Add directory="../system/lib" />
@@ -29,10 +26,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
-					<Add directory="../applications" />
-					<Add directory="../drivers" />
-					<Add directory="../libraries" />
-					<Add directory="../modules" />
+					<Add directory="../app" />
 					<Add directory="../system" />
 					<Add directory="../system/core" />
 					<Add directory="../system/lib" />
@@ -44,58 +38,19 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="../applications" />
-			<Add directory="../drivers" />
-			<Add directory="../libraries" />
-			<Add directory="../modules" />
+			<Add directory="../app" />
 			<Add directory="../system" />
 			<Add directory="../system/core" />
 			<Add directory="../system/lib" />
 		</Compiler>
-		<Unit filename="../applications/main.c">
+		<Unit filename="../app/main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../applications/main.h" />
-		<Unit filename="../applications/task_main.c">
+		<Unit filename="../app/main.h" />
+		<Unit filename="../app/task_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../applications/task_main.h" />
-		<Unit filename="../drivers/bsp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../drivers/bsp.h" />
-		<Unit filename="../modules/key/app_key.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/key/app_key.h" />
-		<Unit filename="../modules/key/bsp_key.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/key/bsp_key.h" />
-		<Unit filename="../modules/key/task_key.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/key/task_key.h" />
-		<Unit filename="../modules/led/app_led.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/led/app_led.h" />
-		<Unit filename="../modules/led/bsp_led.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/led/bsp_led.h" />
-		<Unit filename="../modules/led/task_led.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/led/task_led.h" />
-		<Unit filename="../modules/print/app_uart.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/print/app_uart.h" />
-		<Unit filename="../modules/print/bsp_uart.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../modules/print/bsp_uart.h" />
+		<Unit filename="../app/task_main.h" />
 		<Unit filename="../system/core/os_api.h" />
 		<Unit filename="../system/core/os_cfg.h" />
 		<Unit filename="../system/core/os_core.c">
@@ -114,34 +69,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../system/lib/lib_ascii.h" />
-		<Unit filename="../system/lib/lib_list.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_list.h" />
 		<Unit filename="../system/lib/lib_math.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../system/lib/lib_math.h" />
-		<Unit filename="../system/lib/lib_mem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_mem.h" />
-		<Unit filename="../system/lib/lib_print.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_print.h" />
-		<Unit filename="../system/lib/lib_queue.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_queue.h" />
-		<Unit filename="../system/lib/lib_sort.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_sort.h" />
-		<Unit filename="../system/lib/lib_str.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_str.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

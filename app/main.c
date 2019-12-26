@@ -1,7 +1,7 @@
 /**
  * file:    main.c
  * author:  wallying@foxmail.com
- * date:    2019-12-17
+ * date:    2019-12-26
  **/
 
 
@@ -12,7 +12,6 @@ int main(void)
 {
     OS_INT_DISABLE();
 
-    bsp_init();
     os_clock_init();
 
     OS_INT_ENABLE();
@@ -21,8 +20,6 @@ int main(void)
 
     /* user task init */
     os_task_init(&task_main, task_mainEntry, NULL);
-    os_task_init(&task_key, task_keyEntry, NULL);
-    os_task_init(&task_led, task_ledEntry, NULL);
 
     os_start();
 

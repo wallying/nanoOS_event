@@ -10,13 +10,9 @@
 
 
 #include "os_api.h"
-#include "bsp.h"
 
 
 #include "task_main.h"
-#include "key/task_key.h"
-#include "led/task_led.h"
-#include "print/app_uart.h"
 
 
 enum {
