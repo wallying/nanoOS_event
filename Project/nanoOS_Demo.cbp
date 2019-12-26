@@ -14,9 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../app" />
-					<Add directory="../system" />
-					<Add directory="../system/core" />
-					<Add directory="../system/lib" />
+					<Add directory="../core" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -27,9 +25,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="../app" />
-					<Add directory="../system" />
-					<Add directory="../system/core" />
-					<Add directory="../system/lib" />
+					<Add directory="../core" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -39,9 +35,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="../app" />
-			<Add directory="../system" />
-			<Add directory="../system/core" />
-			<Add directory="../system/lib" />
+			<Add directory="../core" />
 		</Compiler>
 		<Unit filename="../app/main.c">
 			<Option compilerVar="CC" />
@@ -51,28 +45,20 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../app/task_main.h" />
-		<Unit filename="../system/core/os_api.h" />
-		<Unit filename="../system/core/os_cfg.h" />
-		<Unit filename="../system/core/os_core.c">
+		<Unit filename="../core/os_api.h" />
+		<Unit filename="../core/os_cfg.h" />
+		<Unit filename="../core/os_core.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../system/core/os_cpu.h" />
-		<Unit filename="../system/core/os_def.h" />
-		<Unit filename="../system/core/os_port.c">
+		<Unit filename="../core/os_cpu.h" />
+		<Unit filename="../core/os_def.h" />
+		<Unit filename="../core/os_port.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../system/core/os_timer.c">
+		<Unit filename="../core/os_timer.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../system/core/os_type.h" />
-		<Unit filename="../system/lib/lib_ascii.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_ascii.h" />
-		<Unit filename="../system/lib/lib_math.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../system/lib/lib_math.h" />
+		<Unit filename="../core/os_type.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
